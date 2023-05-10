@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <head>
+    <meta charset="UTF-8">
+    <title>과일 이미지 문제</title>
+    <style>
+     
+      nav {
+        background-color: #333; 
+        overflow: hidden; 
+        display: flex; 
+        justify-content:
+      }
+      
+     
+      nav a {
+        display: block; 
+        color: white;
+        text-align: center; 
+        padding: 14px 16px; 
+        text-decoration: none; 
+        font-size: 17px; 
+      }
+      
+    
+      nav a.active {
+        margin-right: 40%;
+      }
+      
+   
+      nav a:hover {
+        background-color: #ddd; /* 배경색 변경 */
+        color: black; /* 글자색 변경 */
+      }
+      
+    
+      .active {
+        background-color: #4CAF50; /* 배경색 */
+        color: white; /* 글자색 */
+      }
+    </style>
+  </head>
+  <body align=center>
+    <nav>
+      <a class="active" href="과제.html">홈</a>
+      <a href="원광대학교문제.html">CHAP.1</a>
+      <a href="CHAP_2.html">CHAP.2</a>
+      <a href="CHAP_3.html">CHAP.3</a>
+    </nav>
+<div draggable="false">
+ <div id="problem1">
+      <h1>과일이름을 쓰시오</h1>
+      <div> <img align=center src="사과.png"></img></div>
+      <input id="answer1" type="text">
+      <button onclick="checkAnswer(1)">제출</button>
+      <p id="result1"></p>
+    </div>
+    
+    <div id="problem2">
+     
+      <div> <img align=center src="바나나.png"></img></div>
+      <input id="answer2" type="text">
+      <button onclick="checkAnswer(2)">제출</button>
+      <p id="result2"></p>
+    </div>
+ <div id="problem3">
+     
+     <div> <img align=center src="파인애플.png"></img></div>
+      <input id="answer3" type="text">
+      <button onclick="checkAnswer(3)">제출</button>
+      <p id="result3"></p>
+    </div></div>
+    <script>
+      function checkAnswer(problemNumber) {
+    
+        var correctAnswers = [
+          ["사과"],
+          ["바나나"],
+          ["파인애플"]
+        ];
+        
+    
+        var userAnswer = document.getElementById("answer" + problemNumber).value;
+        var correctAnswer = correctAnswers[problemNumber-1];
+        
+     
+        if (correctAnswer.includes(userAnswer)) {
+          
+          document.getElementById("result" + problemNumber).innerHTML = "정답입니다!";
+        } else {
+          
+          document.getElementById("result" + problemNumber).innerHTML = "틀렸습니다. 다시 시도해보세요.";
+        }
+        
+       
+        if (document.getElementById("result1").innerHTML === "정답입니다!" && document.getElementById("result2").innerHTML === "정답입니다!"&& document.getElementById("result3").innerHTML === "정답입니다!") {
+       
+          alert("◆=2")
+        }
+      }
+    </script>
+  </body>
+</html>
